@@ -1,6 +1,7 @@
 # Build the unit tests.
 ifneq ($(TARGET_SIMULATOR),true)
 
+ifneq ($(TARGET_ARCH),mips)
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -36,6 +37,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_DATA)/nativetest
 
 include $(BUILD_EXECUTABLE)
 
+endif
 endif
 # Build the manual test programs.
 include $(call all-subdir-makefiles)

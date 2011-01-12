@@ -1,4 +1,5 @@
 # Build the unit tests.
+ifneq ($(TARGET_ARCH),mips)
 ifneq ($(TARGET_SIMULATOR),true)
 
 LOCAL_PATH:= $(call my-dir)
@@ -40,3 +41,4 @@ $(foreach file,$(test_src_files), \
 endif
 # Build the manual test programs.
 include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
